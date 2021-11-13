@@ -1,4 +1,4 @@
 ---
-title: "juste moi "
-description: Séance pour une personne, en extérieur ou en studio
+title: "Pour deux "
+description: Pour deux personnes, en extérieur ou en studio
 ---
