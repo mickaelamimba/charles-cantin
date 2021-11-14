@@ -6,6 +6,9 @@ menu:
   - title: Galerie
     url: /galerie
     type: Link
+  - title: Tarifs
+    url: /tarifs
+    type: Link
 réseaux:
   - title: facebook
     icons: images/834722_facebook_icon-1-.png
