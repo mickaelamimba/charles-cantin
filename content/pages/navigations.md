@@ -2,4 +2,5 @@
 menu:
   - home
   - contact
+  - galerie
 ---
