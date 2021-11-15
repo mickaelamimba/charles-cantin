@@ -11,7 +11,7 @@ const Tarifs = ({data}) => {
                 {data?.map((item,i)=>(
                     <div className='shadow-md rounded-md bg-white'  key={i}>
                         <h2 className='text-3xl font-medium text-center py-7'>
-                            <Link href={`/tarifs/${encodeURIComponent(parsStringSug(item.default.attributes.prestation))}`}>
+                            <Link href={`/tarifs/${encodeURIComponent(parsStringSug(item.default.attributes.prestation))}`} passHref={true}>
                                 <a>{item.default.attributes.prestation}</a>
                             </Link>
 

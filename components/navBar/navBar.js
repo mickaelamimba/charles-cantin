@@ -19,8 +19,8 @@ const {attributes}=data||{}
             <ul className='sm:grid sm:grid-cols-3 sm:gap-5'>
                 <div className='sm:col-span-2 sm:flex justify-around'>
                     {attributes?.menu.map((item)=>(
-                        <li key={item.title}>
-                            <Link href={item.url}>
+                        <li key={item.title} >
+                            <Link href={item.url} passHref={true}>
                                 <a>{item.title}</a>
                             </Link>
                         </li>
@@ -30,9 +30,9 @@ const {attributes}=data||{}
                 <div className='sm:flex justify-end'>
                     {attributes?.réseaux.map((item)=>(
                         <li className='sm:px-3' key={item.title}>
-                            <Link href={item.url}>
+                            <Link href={item.url} passHref={true}>
                                 <a>
-                                    <Image  src={`/${item.icons}`} width={15} height={15} objectFit='contain' />
+                                    <Image  src={`/${item.icons}`} alt={item.title} width={15} height={15} objectFit='contain' />
                                     <span className='sm:px-2'>{item.title}</span>
 
                                 </a>

@@ -6,6 +6,7 @@ module.exports = {
       "@/content/*": ["content/pages/"]
     }
   },
+
   webpack:(config)=>{
     config.module.rules.push({
       test: /\.md$/,

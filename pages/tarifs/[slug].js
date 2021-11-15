@@ -32,7 +32,7 @@ const Prestation = ({content}) => {
                 </div>
             </section>
             <button>
-                <Link href='/tarifs'>
+                <Link href='/tarifs' passHref={true}>
                     <a>Tarif</a>
                 </Link>
             </button>
