@@ -10,7 +10,7 @@ export const getStaticProps = async({params})=>{
     const galeries=await Promise.all(data)
     const sort= galeries.filter((item)=>parsStringSug(item.default.attributes.category) === slug )
     const contentSort= await formatReturn(sort)
-    console.log(sort)
+
 
     return{
         props: {contentSort}

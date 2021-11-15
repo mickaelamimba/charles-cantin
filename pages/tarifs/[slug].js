@@ -1,5 +1,5 @@
 import React from 'react';
-import {getSlugs, parsStringSug} from "../../utils/getSlugs";
+import {getSlugs} from "../../utils/getSlugs";
 import Link from "next/link";
 
 export const getStaticProps = async({params})=>{

@@ -2,8 +2,8 @@ import React from 'react';
 import {formatReturn, getSlugs, parsStringSug} from "../../utils/getSlugs";
 import Link from 'next/link'
 
-const Tarifs = ({tarifs,data}) => {
-    console.log(tarifs,data)
+const Tarifs = ({data}) => {
+
     return (
         <div>
             <h1 className='font-medium text-3xl'>Tatif</h1>
@@ -37,6 +37,6 @@ export const getStaticProps = async () =>{
 
     
     return{
-        props:{tarifs,data}
+        props:{data}
     }
 }
