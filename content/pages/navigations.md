@@ -9,6 +9,9 @@ menu:
   - title: Tarifs
     url: /tarifs
     type: Link
+  - title: Contact
+    url: /contact
+    type: Link
 réseaux:
   - title: facebook
     icons: images/834722_facebook_icon-1-.png
