@@ -14,3 +14,11 @@ const AdminPage =()=>{
 }
 
 export default AdminPage
+
+AdminPage.getLayout = function PageLayout(page) {
+    return (
+        <>
+            {page}
+        </>
+    )
+}

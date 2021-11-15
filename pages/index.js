@@ -1,20 +1,28 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+
 
 const Home=({content})=> {
     const  {attributes}= content
-  console.log(content)
+
   return (
     <>
-     <h1>{attributes.title}</h1>
-      <p>{attributes.description}</p>
+      <div className='bg-blue-50 shadow py-7 overflow-auto'>
+        <h1 className='font-bold text-3xl text-center'>{attributes.title}</h1>
+      </div>
+
+
+      <figure>
+        <Image src={`/${attributes.thumbnail}`} width={400} height={400} objectFit='contain' layout='responsive' />
+      </figure>
+
     </>
   )
 }
 
 export const getStaticProps = async () =>{
-  const content = await import(`../content/pages/${'home'}.md`)
+
+  const content = await import(`/content/pages/${'home'}.md`)
   return {
     props: {content: content.default}
   }

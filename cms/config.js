@@ -1,5 +1,5 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default{
-    cms_manual_ini: true,
     backend:{
         name:'github',
         repo:'mickaelamimba/charles-cantin',
@@ -9,56 +9,110 @@ export default{
     public_folder:'images',
     collections:[
         {
-            name:'pages',
-            label:'pages',
+            name:'home',
+            label:'Accueil',
             files:[
                 {
-                    label:'home',
-                    name:'home',
+                    label:'Header',
+                    name:'header',
+                    create:true,
                     file:'content/pages/home.md',
                     fields:[
-                        {
-                            label:'Mon super tittre',
-                            name:'title',
-                            widget: 'string'
-                        },
-                        {
-                            label:'Mon super tittre',
-                            name:'description:',
-                            widget: 'markdown'
-                        },
-
+                        {label:'Titre', name:'title', widget:'string'},
+                        {label:'Photographe',name:'thumbnail', widget:'image'}
                     ]
                 },
                 {
-                    label:'galerie',
-                    name:'galerie',
-                    slug:'{{slug}}',
-                    create:true,
-                    preview_path:'{{slug}}',
-                    file:'content/pages/galerie.md',
+                    label:'Navigations',
+                    name:'navigations',
+                    file:'content/pages/navigations.md',
                     fields:[
-                        {label:'Title', name:'title', widget: 'string'},
-                        {label:'Photographies', name:'thumbnail', widget: 'image'},
-                        {label:'Catégories', name:'catégories', widget: 'relation', collection:'catégories', searchFields:['name'], valueField:'name', multiple:true}
-                    ]
-                },
-                {
-                    name:'catégories',
-                    label:'Catégories',
-                    file:'content/pages/catégories.md',
-                    create:true,
-                    slug:'{{slug}}',
-                    identifier_name: name,
-                    fields:[
-                        {label:'name',name:'Nom',widget: 'string'}
+                        {label:'Menu', label_singular:'Menu', name:'menu', widget:'list',
+                            fields:[
+                                {label:'Titre',name:'title', widget:'string'},
+                                {label: 'URL',name:'url', widget:'string'},
+                                {label:'Type',name:'type' ,widget:'select',
+                                    options:[
+                                        {label: "Link", value: "Link" },
+                                        {label:'Button' ,value: 'Button'}
+                                    ]}
+                            ]
+                        },
+                        {
+                            label:'Réseaux',
+                            name:'réseaux',
+                            label_singular:'Réseaux',
+                            widget:'list',
+                            fields:[
+                                {label:'Non du réseau ',name:'title', widget:'string'},
+                                {label: 'URL',name:'url', widget:'string'},
+                                {label:'Icônes',name:'icons', widget:'image'}
+                            ]},
                     ]
                 }
+            ]
+        },
+        {
+            name:'galerie',
+            label:'Galerie',
+            folder:'content/galeries',
+            slug:'{{slug}}',
+            file:'content/galeries/{{slug}}.md',
+            create:true,
+            extension:'md',
+            format: 'frontmatter',
+            fields:[
+                {label:'Title', name:'title', widget: 'string'},
+                {label:'Photographies', name:'thumbnail', widget: 'image'},
+                {label:'Catégories', name:'category', widget: 'relation', collection:'categories', searchFields:['name'], valueField:'name' }
 
-            ],
+            ]
+        },
+        {
+            name:'categories',
+            label:'Categories',
+            folder:'content/categories',
+            file:'content/categories/{{slug}}.md',
+            extension:'md',
+            format: 'frontmatter',
+            create:true,
+            slug:'{{slug}}',
+            identifier_field: 'name',
+            fields:[
+                {label:'Nom',name:'name',widget: 'string'}
+            ]
+        },
+        {
+            label:'Tarifs',
+            name:'tarifs',
+            slug:'{{slug}}',
+            create:true,
+            folder:'content/tarifs',
+            file:'content/tarifs/{{slug}}.md',
+            extension:'md',
+            format: 'frontmatter',
+            identifier_field: 'prix',
+            fields:[
+                {label:'Prix', name:'prix', widget: 'number',value_type: 'float'},
+                {label:'Prestation ', name:'prestation', widget: 'relation', collection:'prestations', searchFields:['title'], valueField:'title'}
+            ]
 
+        },
+        {
+            label:'Prestations',
+            name:'prestations',
+            slug:'{{slug}}',
+            create:true,
+            folder:'content/prestations',
+            file:'content/prestations/{{slug}}.md',
+            extension:'md',
+            format: 'frontmatter',
+            identifier_field: 'title',
+            fields:[
+                {label:'Titre', name:'title', widget: 'string'},
+                {label:'Description',name:'description',widget: 'markdown'}
+            ]
         }
-
     ]
 
 }
