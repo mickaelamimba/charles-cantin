@@ -7,7 +7,7 @@ const Home=({content})=> {
 
   return (
     <>
-      <div className='bg-blue-50 shadow py-7 overflow-auto'>
+      <div className='bg-primary-main shadow py-7 overflow-auto'>
         <h1 className='font-bold text-3xl text-center'>{attributes.title}</h1>
       </div>
 

@@ -5,7 +5,6 @@ import Image from "next/image";
 
 const NavBar = () => {
     const [data,setData]=useState({})
-    console.log(data)
     useEffect(() =>{
         (async () =>{
             const value = await import(`/content/pages/${'navigations'}.md`)
