@@ -8,12 +8,12 @@ const Home=({content})=> {
   return (
     <>
       <div className='bg-primary-main shadow py-7 overflow-auto'>
-        <h1 className='font-bold text-3xl text-center'>{attributes.title}</h1>
+        <h1 className='font-bold text-primary-text text-3xl text-center'>{attributes.title}</h1>
       </div>
 
 
       <figure>
-        <Image src={`/${attributes.thumbnail}`} width={400} height={400} objectFit='contain' layout='responsive' />
+        <Image src={`/${attributes.thumbnail}`} alt={attributes.title} width={400} height={400} objectFit='contain' layout='responsive' />
       </figure>
 
     </>

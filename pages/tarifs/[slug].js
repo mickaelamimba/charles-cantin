@@ -24,14 +24,14 @@ const Prestation = ({content}) => {
     return (
         <div>
             <section className='sm:grid sm:grid-cols-4 sm:gap-5 bg-blue-100 shadow rounded-md '>
-                <div className='bg-red-400 py-7'>
+                <div className='bg-primary-main px-3 text-2xl text-primary-text py-7'>
                     <h2>{attributes.title}</h2>
                 </div>
-                <div className='sm:col-span-3 '>
+                <div className='sm:col-span-3 py-4 px-2.5 '>
                     <p>{attributes.description}</p>
                 </div>
             </section>
-            <button>
+            <button className='bg-blue-100 shadow ml-2.5 hover:bg-primary-hover px-3 py-1 my-5 rounded-md cursor-pointer text-xl'>
                 <Link href='/tarifs' passHref={true}>
                     <a>Tarif</a>
                 </Link>

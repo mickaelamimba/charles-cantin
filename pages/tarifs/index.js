@@ -5,23 +5,26 @@ import Link from 'next/link'
 const Tarifs = ({data}) => {
 
     return (
-        <div>
-            <h1 className='font-medium text-3xl'>Tatif</h1>
-            <div className='sm:grid sm:grid-cols-3  sm:gap-5'>
-                {data?.map((item,i)=>(
-                    <div className='shadow-md rounded-md bg-white'  key={i}>
-                        <h2 className='text-3xl font-medium text-center py-7'>
-                            <Link href={`/tarifs/${encodeURIComponent(parsStringSug(item.default.attributes.prestation))}`} passHref={true}>
-                                <a>{item.default.attributes.prestation}</a>
-                            </Link>
+        <div className='container mx-auto px-9 sm:flex justify-center align-items-center'>
+            <div className='flex-auto'>
+                <h1 className='font-thin py-4 text-3xl'>Tatif</h1>
+                <div className='sm:grid sm:grid-cols-3  sm:gap-5'>
+                    {data?.map((item,i)=>(
+                        <div className='shadow-md rounded-md bg-blue-50'  key={i}>
+                            <h2 className='text-3xl font-medium text-primary-main text-center py-7'>
+                                <Link href={`/tarifs/${encodeURIComponent(parsStringSug(item.default.attributes.prestation))}`} passHref={true}>
+                                    <a>{item.default.attributes.prestation}</a>
+                                </Link>
 
-                        </h2>
+                            </h2>
 
-                        <p className='bg-red-400 pl-3 py-4 text-xl'>prix: <span>{`${item.default.attributes.prix} €`}</span></p>
+                            <p className='bg-primary-main font-thin text-primary-text text-center pl-3 py-4 text-3xl'>Prix: <span>{`${item.default.attributes.prix} €`}</span></p>
 
-                    </div>
-                ))}
+                        </div>
+                    ))}
+                </div>
             </div>
+
 
 
         </div>
