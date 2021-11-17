@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import NavBar from "/components/navBar/navBar";
+import Footer from "../components/footer/footer";
 
 function MyApp({ Component, pageProps}) {
     if(Component.getLayout){
@@ -10,6 +11,7 @@ function MyApp({ Component, pageProps}) {
       <>
         <NavBar/>
         <Component {...pageProps} />
+          <Footer/>
       </>
 
   )

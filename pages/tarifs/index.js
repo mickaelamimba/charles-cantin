@@ -5,7 +5,7 @@ import Link from 'next/link'
 const Tarifs = ({data}) => {
 
     return (
-        <div className='container mx-auto px-9 sm:flex justify-center align-items-center'>
+        <div className='container mx-auto px-9 sm:flex justify-center align-items-center h-screen mb-4'>
             <div className='flex-auto'>
                 <h1 className='font-thin py-4 text-3xl'>Tatif</h1>
                 <div className='sm:grid sm:grid-cols-3  sm:gap-5'>

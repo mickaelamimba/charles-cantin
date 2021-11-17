@@ -23,7 +23,7 @@ const Prestation = ({content}) => {
     const  {attributes}= content
     return (
         <div>
-            <section className='sm:grid sm:grid-cols-4 sm:gap-5 bg-blue-100 shadow rounded-md '>
+            <section className='sm:grid sm:grid-cols-4 sm:gap-5 bg-blue-100 shadow rounded-md h-screen '>
                 <div className='bg-primary-main px-3 text-2xl text-primary-text py-7'>
                     <h2>{attributes.title}</h2>
                 </div>
